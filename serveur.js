@@ -10,5 +10,5 @@ app.post("/", async (req, res) => {
   res.send(traduction)
 })
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
 console.log("Serveur en marche")
