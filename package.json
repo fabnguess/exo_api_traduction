@@ -1,15 +1,16 @@
 {
-    "name": "api-traduction",
-    "version": "1.0.0",
-    "description": "",
-    "main": "serveur.js",
-    "scripts": {
-        "dev": "nodemon"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.17.1",
-        "translate": "^1.4.0"
-    }
+  "name": "api-traduction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serveur.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node serveur.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "translate": "^1.4.0"
+  }
 }
