@@ -10,7 +10,7 @@ serveur.post("/", async (req, res) => {
   res.send(traduction)
 })
 
-serveur.listen(process.env.PORT || 3000, "localhost", (err, address) => {
+serveur.listen(process.env.PORT || 3000, "0.0.0.0", (err, address) => {
   if (err) throw err
   console.log(`Le serveur écoute maintenant ${address}`)
 })
