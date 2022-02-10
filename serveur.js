@@ -1,14 +1,15 @@
-const express = require("express")
-const translate = require("translate")
+import Fastify from "fastify"
+import translate from "translate"
 
-const app = express()
-app.use(express.json())
+const serveur = Fastify()
 
-app.post("/", async (req, res) => {
+serveur.post("/", async (req, res) => {
   const { texte } = req.body
   const traduction = await translate(texte, "fr")
   res.send(traduction)
 })
 
-app.listen(process.env.PORT || 3000)
-console.log("Serveur en marche")
+serveur.listen(process.env.PORT || 3000, (err, address) => {
+  if (err) throw err
+  console.log(`Le serveur écoute maintenant ${address}`)
+})
