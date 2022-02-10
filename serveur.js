@@ -3,7 +3,19 @@ import translate from "translate"
 
 const serveur = Fastify()
 
-serveur.post("/", async (req, res) => {
+const opts = {
+  schema: {
+    body: {
+      type: "object",
+      properties: {
+        texte: { type: "string" },
+        source: { type: "string" },
+        cible: { type: "string" },
+      },
+    },
+  },
+}
+serveur.post("/", opts, async (req, res) => {
   const { texte, source, cible } = req.body
 
   const traduction = await translate(texte, { from: source, to: cible })
